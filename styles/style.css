@@ -1,5 +1,6 @@
 .body {
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .body__wrapper {
@@ -11,17 +12,16 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0;
   font-family: "Kumbh Sans", sans-serif;
 }
 
-.body__wrapper::after,
-.body__wrapper::before {
+.body__wrapper::after, .body__wrapper::before {
   border-radius: 50%;
   content: "";
   position: absolute;
@@ -30,35 +30,23 @@
   right: -231px;
   top: 378px;
   z-index: 0;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.78%, rgba(9, 137, 180, 0.0001)),
-    color-stop(99.94%, #53ffee)
-  );
-  background: linear-gradient(
-    180deg,
-    rgba(9, 137, 180, 0.0001) 0.78%,
-    #53ffee 99.94%
-  );
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.78%, rgba(9, 137, 180, 0.0001)), color-stop(99.94%, #53ffee));
+  background: linear-gradient(180deg, rgba(9, 137, 180, 0.0001) 0.78%, #53ffee 99.94%);
   mix-blend-mode: normal;
   opacity: 0.25;
   -webkit-transform: matrix(0.71, -0.71, -0.71, -0.71, 0, 0);
-  transform: matrix(0.71, -0.71, -0.71, -0.71, 0, 0);
+          transform: matrix(0.71, -0.71, -0.71, -0.71, 0, 0);
 }
 
 @media (max-width: 1000px) {
-  .body__wrapper::after,
-  .body__wrapper::before {
+  .body__wrapper::after, .body__wrapper::before {
     width: 77vw;
     height: 77vw;
   }
 }
 
 @media (max-width: 700px) {
-  .body__wrapper::after,
-  .body__wrapper::before {
+  .body__wrapper::after, .body__wrapper::before {
     width: 622px;
     height: 621px;
     right: -210px;
@@ -66,16 +54,14 @@
 }
 
 @media (max-width: 500px) {
-  .body__wrapper::after,
-  .body__wrapper::before {
+  .body__wrapper::after, .body__wrapper::before {
     right: -370px;
     top: 358px;
   }
 }
 
 @media (max-width: 375px) {
-  .body__wrapper::after,
-  .body__wrapper::before {
+  .body__wrapper::after, .body__wrapper::before {
     width: 622px;
     height: 621px;
     right: -413px;
@@ -87,7 +73,7 @@
   bottom: 253px;
   opacity: 0.5;
   -webkit-transform: rotate(195deg);
-  transform: rotate(195deg);
+          transform: rotate(195deg);
   top: auto;
   left: -285px;
 }
@@ -124,6 +110,14 @@
 @media (max-width: 375px) {
   .body__wrapper .main {
     width: 326px;
+    height: 374px;
+  }
+}
+
+@media (max-width: 350px) {
+  .body__wrapper .main {
+    width: 290px;
+    height: 355px;
   }
 }
 
@@ -133,17 +127,30 @@
   height: 140px;
 }
 
+@media (max-width: 375px) {
+  .body__wrapper .main__background {
+    background-size: contain;
+    height: 130px;
+  }
+}
+
+@media (max-width: 350px) {
+  .body__wrapper .main__background {
+    height: 116px;
+  }
+}
+
 .body__wrapper .main__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   padding-top: 72px;
 }
@@ -161,7 +168,7 @@
 
 .body__wrapper .main__user {
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
   width: 100%;
   height: 100%;
@@ -202,10 +209,10 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   list-style: none;
   padding: 0;
   width: 295px;
@@ -219,11 +226,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 100%;
 }
 
