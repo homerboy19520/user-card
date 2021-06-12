@@ -1,6 +1,6 @@
 .body {
   margin: 0 auto;
-  overflow-y: hidden;
+  overflow: hidden;
 
   &__wrapper {
     height: 100vh;
@@ -13,12 +13,47 @@
     margin: 0;
     font-family: "Kumbh Sans", sans-serif;
 
+    &::after,
+    &::before {
+      border-radius: 50%;
+      position: fixed;
+      content: "";
+      width: 978px;
+      height: 976px;
+      display: block;
+      background: linear-gradient(
+        180deg,
+        rgba(9, 137, 180, 0.0001) 0.78%,
+        #53ffee 99.94%
+      );
+      transform: translate(48%, 51%);
+      z-index: 0;
+
+      @media (max-width: 375px) {
+        width: 622px;
+        height: 621px;
+        transform: translate(46%, 54%);
+      }
+    }
+
+    &::before {
+      opacity: 0.5;
+      transform: translate(-53%, -39%);
+
+      @media (max-width: 375px) {
+        width: 622px;
+        height: 621px;
+        transform: translate(-46%, -61%);
+      }
+    }
+
     .main {
       width: 350px;
       height: 374px;
       background-color: #ffff;
       border-radius: 17px;
       position: relative;
+      z-index: 1;
 
       @media (max-width: 375px) {
         width: 326px;
@@ -28,34 +63,6 @@
       @media (max-width: 350px) {
         width: 290px;
         height: 355px;
-      }
-
-      &::after,
-      &::before {
-        border-radius: 50%;
-        content: "";
-        position: absolute;
-        width: 978px;
-        height: 976px;
-        right: -776px;
-        top: 205px;
-
-        background: linear-gradient(
-          180deg,
-          rgba(9, 137, 180, 0.0001) 0.78%,
-          #53ffee 99.94%
-        );
-        mix-blend-mode: normal;
-        opacity: 0.25;
-        transform: matrix(0.71, -0.71, -0.71, -0.71, 0, 0);
-      }
-
-      &::before {
-        bottom: 253px;
-        opacity: 0.5;
-        transform: rotate(195deg);
-        top: -681px;
-        right: 202px;
       }
 
       &__box {
@@ -69,7 +76,8 @@
 
         @media (max-width: 375px) {
           background-size: contain;
-          height: 130px;
+          height: 100%;
+          border-radius: 15px 15px 0 0;
         }
 
         @media (max-width: 350px) {

@@ -1,6 +1,6 @@
 .body {
   margin: 0 auto;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .body__wrapper {
@@ -21,12 +21,51 @@
   font-family: "Kumbh Sans", sans-serif;
 }
 
+.body__wrapper::after, .body__wrapper::before {
+  border-radius: 50%;
+  position: fixed;
+  content: "";
+  width: 978px;
+  height: 976px;
+  display: block;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.78%, rgba(9, 137, 180, 0.0001)), color-stop(99.94%, #53ffee));
+  background: linear-gradient(180deg, rgba(9, 137, 180, 0.0001) 0.78%, #53ffee 99.94%);
+  -webkit-transform: translate(48%, 51%);
+          transform: translate(48%, 51%);
+  z-index: 0;
+}
+
+@media (max-width: 375px) {
+  .body__wrapper::after, .body__wrapper::before {
+    width: 622px;
+    height: 621px;
+    -webkit-transform: translate(46%, 54%);
+            transform: translate(46%, 54%);
+  }
+}
+
+.body__wrapper::before {
+  opacity: 0.5;
+  -webkit-transform: translate(-53%, -39%);
+          transform: translate(-53%, -39%);
+}
+
+@media (max-width: 375px) {
+  .body__wrapper::before {
+    width: 622px;
+    height: 621px;
+    -webkit-transform: translate(-46%, -61%);
+            transform: translate(-46%, -61%);
+  }
+}
+
 .body__wrapper .main {
   width: 350px;
   height: 374px;
   background-color: #ffff;
   border-radius: 17px;
   position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 375px) {
@@ -43,31 +82,6 @@
   }
 }
 
-.body__wrapper .main::after, .body__wrapper .main::before {
-  border-radius: 50%;
-  content: "";
-  position: absolute;
-  width: 978px;
-  height: 976px;
-  right: -776px;
-  top: 205px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.78%, rgba(9, 137, 180, 0.0001)), color-stop(99.94%, #53ffee));
-  background: linear-gradient(180deg, rgba(9, 137, 180, 0.0001) 0.78%, #53ffee 99.94%);
-  mix-blend-mode: normal;
-  opacity: 0.25;
-  -webkit-transform: matrix(0.71, -0.71, -0.71, -0.71, 0, 0);
-          transform: matrix(0.71, -0.71, -0.71, -0.71, 0, 0);
-}
-
-.body__wrapper .main::before {
-  bottom: 253px;
-  opacity: 0.5;
-  -webkit-transform: rotate(195deg);
-          transform: rotate(195deg);
-  top: -681px;
-  right: 202px;
-}
-
 .body__wrapper .main__box {
   width: 100%;
   height: 140px;
@@ -82,7 +96,8 @@
 @media (max-width: 375px) {
   .body__wrapper .main__background {
     background-size: contain;
-    height: 130px;
+    height: 100%;
+    border-radius: 15px 15px 0 0;
   }
 }
 
