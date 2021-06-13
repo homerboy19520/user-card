@@ -24,7 +24,7 @@
       height: 976px;
       display: block;
       background: linear-gradient(
-        200deg,
+        260deg,
         rgba(9, 137, 180, 0.0001) 0.78%,
         #53ffee 99.94%
       );
@@ -41,6 +41,11 @@
     &::before {
       opacity: 0.5;
       transform: translate(-53%, -39%);
+      background: linear-gradient(
+        120deg,
+        rgba(9, 137, 180, 0.0001) 0.78%,
+        #53ffee 99.94%
+      );
 
       @media (max-width: 375px) {
         width: 622px;
